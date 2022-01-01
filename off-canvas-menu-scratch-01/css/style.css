@@ -1,0 +1,52 @@
+body {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.menu {
+  position: fixed;
+  left: -300px;
+  padding-top: 0.1px;
+  background-color: #251e63;
+  width: 300px;
+  height: 100vh;
+}
+
+.menu ul {
+  margin: 0;
+  padding: 0;
+  margin-top: 10em;
+  width: 100%;
+}
+
+.menu ul li {
+  color: #fff;
+  text-align: center;
+  padding: 1em 2em;
+}
+
+.menu ul li:hover {
+  background-color: #251b34;
+  cursor: pointer;
+}
+
+.main {
+  height: 100vh;
+  background-color: #76d694;
+  padding: 5rem;
+}
+
+.main h1 {
+  margin-top: 10rem;
+  margin-bottom: 2rem;
+}
+
+button {
+  background-color: #fff;
+  padding: 1em 2em;
+  color: #000;
+}
+
+body.is-menu-open .menu,
+body.is-menu-open .main {
+  transform: translateX(300px);
+}
