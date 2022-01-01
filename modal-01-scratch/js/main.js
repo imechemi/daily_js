@@ -3,10 +3,10 @@ const closeButton = document.querySelector('button.cross')
 const modal = document.querySelector('.modal')
 
 openButton.addEventListener('click', function() {
-  modal.classList.add('modal-open')
+  document.body.classList.add('modal-open')
 })
 
 closeButton.addEventListener('click', function() {
-  modal.classList.remove('modal-open')
+  document.body.classList.remove('modal-open')
 })
 
