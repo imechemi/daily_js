@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.tab__container {
+  width: 500px;
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+.tab__menu {
+  width: 100%;
+}
+
+.tab__menu ul {
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  font-size: 0;
+}
+
+.tab__menu ul li {
+  display: inline-block;
+  white-space: none;
+  margin: 0;
+  border: solid 1px;
+  padding: 10px;
+  width: 33.33%;
+  font-size: 1rem;
+}
+
+img {
+  width: 100%;
+}
+
+.tab__content__container {
+  position: relative;
+
+}
+
+.tab__content {
+  position: absolute;
+  top: 0; 
+  left: 0;
+  border: solid 1px;
+  display: none;
+  grid-template-columns: 2fr 3fr;
+}
+
+.tab__content .graphic {
+  display: flex;
+  align-items: center;
+  padding: 1em;
+}
+
+.tab__content .summary {
+  padding: 1rem;
+}
+
+.tab__menu ul li.active {
+  border: solid 10px #635;
+  border-bottom: none;
+}
+
+.tab__content.active {
+  border: solid 10px #635;
+  border-top: none;
+  display: grid;
+}
