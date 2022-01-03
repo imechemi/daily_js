@@ -1,5 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
 
+[data-category="flags"] {
+  --border-color: hsl(352, 100%, 40%);
+  --text-color: hsl(352, 97%, 23%);
+}
+
+[data-category="apparels"] {
+  --border-color: hsl(215, 46%, 42%);
+  --text-color: hsl(215, 63%, 23%);
+}
+
+[data-category="shoes"] {
+  --border-color: hsl(46, 100%, 52%);
+  --text-color: hsl(43, 26%, 26%);
+}
 
 body {
   font-family: 'Rubik', sans-serif;
@@ -24,29 +38,32 @@ body {
 }
 
 .tab__menu ul li {
+  position: relative;
+  z-index: 3000;
   display: inline-block;
   white-space: none;
   margin: 0;
-  border: solid 1px;
+  border: solid 1px #ccc;
   padding: 10px;
   width: 33.33%;
   font-size: 1rem;
+  filter: grayscale(75%) brightness(0.9);
+  color: var(--text-color);
 }
 
 img {
   width: 100%;
 }
 
-.tab__content__container {
+.tab__contents {
   position: relative;
-
 }
 
 .tab__content {
   position: absolute;
   top: 0; 
   left: 0;
-  border: solid 1px;
+  z-index: 100;
   display: none;
   grid-template-columns: 2fr 3fr;
 }
@@ -62,12 +79,24 @@ img {
 }
 
 .tab__menu ul li.active {
-  border: solid 10px #635;
+  border: solid 10px var(--border-color);
   border-bottom: none;
+  outline: none;
+  filter: none;
+}
+
+.tab__menu ul li.active::after {
+  position: absolute;
+  z-index: 700;
+  bottom: -0.7em;
+  left: 0;
+  right: 0;
+  display: block;
+  content: "";
+  border-bottom: 1em solid white;
 }
 
 .tab__content.active {
-  border: solid 10px #635;
-  border-top: none;
+  border: solid 10px var(--border-color);
   display: grid;
 }
