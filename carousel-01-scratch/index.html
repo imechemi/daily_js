@@ -11,33 +11,43 @@
 </head>
 <body>
   <div class="carousel">
-    <button class="direction left">
-      &lt;
-    </button>
-
-    <div class="slides">
-      <ul class="slide_track">
-        <li>
-          <div class="slide">
-            <img src="images/image1.jpg">
-          </div>    
-        </li>
-        <li>
-          <div class="slide">
-            <img src="images/image2.jpg">
-          </div>
-        </li>
-        <li>
-          <div class="slide">
-            <img src="images/image3.jpg">
-          </div>
-        </li>
+    <div class="carousel__main">
+      <button class="direction left">
+        &lt;
+      </button>
+  
+      <div class="slides">
+        <ul class="slide_track">
+          <li>
+            <div class="slide">
+              <img src="images/image1.jpg">
+            </div>    
+          </li>
+          <li>
+            <div class="slide">
+              <img src="images/image2.jpg">
+            </div>
+          </li>
+          <li>
+            <div class="slide">
+              <img src="images/image3.jpg">
+            </div>
+          </li>
+        </ul>
+      </div>
+  
+      <button class="direction right">
+        &gt;
+      </button>
+    </div>
+    
+    <div class="carousel__dots">
+      <ul>
+        <li><button class="active"></button></li>
+        <li><button></button></li>
+        <li><button></button></li>
       </ul>
     </div>
-
-    <button class="direction right">
-      &gt;
-    </button>
   </div>
   <script src="js/main.js"></script>
 </body>

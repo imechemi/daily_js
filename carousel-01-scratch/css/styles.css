@@ -10,8 +10,17 @@ body {
   height: 400px;
   margin-left: 200px;
   margin-top: 200px;
+}
+
+.carousel__main {
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: 40px 1fr 40px;
+}
+
+.direction {
+  border: none;
 }
 
 .slides {
@@ -48,3 +57,36 @@ body {
   object-fit: cover;
 }
 
+.carousel__dots {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel__dots ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+  line-height: 10px;
+}
+
+.carousel__dots ul li {
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+.carousel__dots ul li button {
+  font-size: 5px;
+  width: 15px;
+  height: 15px;
+  margin: 0;
+  padding: 0;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.carousel__dots ul li button.active {
+  background-color: #888;
+}

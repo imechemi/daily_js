@@ -3,11 +3,7 @@ const slides = carousel.querySelector('.slides')
 const slideListItems = slides.querySelectorAll('li')
 const slideWidth = slideListItems[0].getBoundingClientRect().width
 
-
-console.log(`Slide width: ${slideWidth}`)
 slideListItems.forEach((listItem, index) => {
-  console.log(listItem)
-  console.log(`Setting left: ${index * slideWidth}`)
   listItem.style.left = index * slideWidth + 'px'
 })
 
@@ -33,4 +29,16 @@ rightArrow.addEventListener('click', function() {
   } else {
     slideTrack.style.left = leftPos - slideWidth + 'px'
   }
+})
+
+
+const dotsContainer = carousel.querySelector('.carousel__dots')
+const dots = dotsContainer.querySelectorAll('button')
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', function() {
+    slideTrack.style.left = `-${index * slideWidth}px`
+    dots.forEach((dot) => dot.classList.remove('active'))
+    dot.classList.add('active')
+  })
 })
