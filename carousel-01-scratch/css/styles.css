@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+body {
+  font-family: 'Rubik', sans-serif;
+}
+
+.carousel {
+  padding: 0;
+  width: 700px;
+  height: 400px;
+  margin-left: 200px;
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 40px 1fr 40px;
+}
+
+.slides {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.slides ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  left: 0;
+}
+
+.slides ul li {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.slide {
+  width: inherit;
+  height: inherit;
+  display: flex;
+  align-items: center;
+}
+
+.slide img {
+  object-fit: cover;
+}
+
