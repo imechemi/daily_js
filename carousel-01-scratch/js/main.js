@@ -13,10 +13,13 @@ const rightArrow = carousel.querySelector('.right')
 const slideTrack = slides.querySelector('.slide_track')
 slideTrack.style.left = '0px'
 
+const dotsContainer = carousel.querySelector('.carousel__dots')
+const dots = dotsContainer.querySelectorAll('button')
+
 leftArrow.addEventListener('click', function() {
   const leftPos = parseInt(slideTrack.style.left.replace('px', ''))
   if (leftPos === 0) {
-    slideTrack.style.left = `-${((slideListItems.length - 1) * slideWidth)}px`
+    leftArrow.classList.add('hidden')
   } else {
     slideTrack.style.left = leftPos + slideWidth + 'px'
   }
@@ -24,16 +27,19 @@ leftArrow.addEventListener('click', function() {
 
 rightArrow.addEventListener('click', function() {
   let leftPos = parseInt(slideTrack.style.left.replace('px', ''))
-  if (-leftPos === slideWidth * (slideListItems.length - 1)) {
-    slideTrack.style.left = '0px'
+  console.log(leftPos)
+  if (-leftPos === slideWidth * (slideListItems.length - 2)) {
+    console.log(rightArrow)
+    rightArrow.classList.add('hidden')
   } else {
     slideTrack.style.left = leftPos - slideWidth + 'px'
   }
+  leftArrow.classList.remove('hidden')
+  const currentActiveDot = dotsContainer.querySelector('.active')
+  const nextDot = currentActiveDot.parentElement.nextElementSibling.firstChild
+  dots.forEach((dot) => dot.classList.remove('active'))
+  nextDot.classList.add('active')
 })
-
-
-const dotsContainer = carousel.querySelector('.carousel__dots')
-const dots = dotsContainer.querySelectorAll('button')
 
 dots.forEach((dot, index) => {
   dot.addEventListener('click', function() {

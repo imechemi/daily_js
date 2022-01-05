@@ -23,6 +23,10 @@ body {
   border: none;
 }
 
+.direction.hidden {
+  visibility: hidden;
+}
+
 .slides {
   width: 100%;
   height: 100%;
