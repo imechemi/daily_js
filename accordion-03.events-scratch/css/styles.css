@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400&display=swap');
+
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: 'Rubik', sans-serif;
+}
+
+.container {
+  padding-top: 1px;
+  width: 100%;
+  min-height: 100%;
+  height: auto;
+  background:
+    linear-gradient(65deg,  #f5bf42, #f58a42);
+}
+
+.accordion {
+  width: 500px;
+  margin-top: 200px;
+  margin-left: 200px;
+}
+
+
+.accordion__item {
+  border-left: solid 20px rgba(0, 0, 0, 0.3);
+}
+
+.accordion__item:first-child {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.accordion__item:last-child {
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.accordion__header h1 {
+  text-align: left;
+}
+
+.accordion__header button{
+  display: block;
+  width: 100%;
+  text-align: left;
+  border: none;
+}
+
+.accordion__content {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.accordion__content.is-hidden {
+  display: none;
+}
+
+.image {
+  padding: 1em;
+}
+
+.image svg {
+  width: 100px;
+}
+
+.summary {
+  padding: 1em;
+}
+
+.cheesy-color {
+  background-color: #f5bf42;
+}
+
+.lettuce-color {
+  background-color: #2da152;
+}
+
+.tomato-color {
+  background-color: #c9162b;
+}
+
+.beef-color {
+  background-color: #d17708;
+}
