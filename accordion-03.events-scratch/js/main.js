@@ -1,12 +1,12 @@
 const accordion = document.querySelector('.accordion')
 const accordionItems = accordion.querySelectorAll('.accordion__item')
 
-accordionItems.forEach(accordionItem => {
-  const header = accordionItem.querySelector('.accordion__header')
-  const button = header.querySelector('button')
 
-  button.addEventListener('click', function() {
-    const accordionContent = accordionItem.querySelector('.accordion__content')
+accordion.addEventListener('click', function(e) {
+  const eventTarget = e.target
+  if (eventTarget.matches('button') && eventTarget.closest('.accordion__header')) {
+    const accordionHeader = eventTarget.closest('.accordion__header')
+    const accordionContent = accordionHeader.nextElementSibling 
     accordionContent.classList.toggle('is-hidden')
-  })
+  }
 })
