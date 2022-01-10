@@ -3,7 +3,27 @@ const arrowButtons = carousel.querySelectorAll('.nav')
 const trackContainer = carousel.querySelector('.track__container')
 const track = trackContainer.querySelector('.track')
 const slideWidth = trackContainer.querySelector('.slide').getBoundingClientRect().width
+const carouselDotsWrapper = carousel.querySelector('.carousel__dots')
 const dots = carousel.querySelectorAll('.dot')
+
+
+carouselDotsWrapper.addEventListener('click', function(e) {
+  if (e.target.classList.contains('dot',)) {
+    dots.forEach((dot, index) => {
+      dot.classList.remove('active')
+      if (dot.isSameNode(e.target)) {
+        activateSlide(index)
+        dot.classList.add('active')
+        return;
+      }
+    })
+  }
+})
+
+function activateSlide(index) {
+  console.log(index)
+  track.style.left = `-${(slideWidth * index)}px`
+}
 
 arrowButtons.forEach(arrow => {
   arrow.addEventListener('click', function(e) {
@@ -26,7 +46,6 @@ arrowButtons.forEach(arrow => {
 
     const index = Math.abs(parseInt(track.style.left)) / slideWidth
     updateDotAtIndex(index)
-
   })
 })
 
@@ -39,7 +58,6 @@ function updateDotAtIndex(selectedDotIndex) {
     }
   })
 }
-
 
 function showLeftArrow() {
   carousel.querySelector("[data-direction='left']").classList.remove('hidden')
