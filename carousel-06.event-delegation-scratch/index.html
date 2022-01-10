@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Carousel</title>
+
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/reset.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+
+  <body>
+    <section class="carousel">
+      <div class="carousel__main">
+        <button class="nav hidden" data-direction="left">
+          <
+        </button>
+
+        <div class="track__container">
+          <ul class="track">
+            <li class="slide">
+              <img src="./images/image1.jpg" alt="">
+            </li>
+            <li class="slide">
+              <img src="./images/image2.jpg" alt="">
+            </li>
+            <li class="slide">
+              <img src="./images/image3.jpg" alt="">
+            </li>
+          </ul>
+        </div>
+
+        <button class="nav" data-direction="right">
+          >
+        </button>
+      </div>
+      
+      <div class="carousel__dots">
+        <button class="dot active"></button>
+        <button class="dot"></button>
+        <button class="dot"></button>
+      </div>
+
+
+    </section>
+    <script src="js/main.js"></script>
+  </body>
+</html>
