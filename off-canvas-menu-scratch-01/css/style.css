@@ -1,12 +1,13 @@
 body {
   font-family:Verdana, Geneva, Tahoma, sans-serif;
+  overflow-x: hidden;
 }
 
 .menu {
   position: fixed;
   left: -300px;
   padding-top: 0.1px;
-  background-color: #251e63;
+  background-color: purple;
   width: 300px;
   height: 100vh;
   transition-duration: 200ms;
@@ -47,9 +48,18 @@ body {
 }
 
 button {
-  background-color: #fff;
+  background-color: transparent;
   padding: 1em 2em;
   color: #000;
+  border: solid 2px #000;
+}
+
+button:hover {
+  background-color: black;
+  color: #fff;
+  transition-duration: 400ms;
+  transition-property: background-color;
+  transition-timing-function: ease-in-out;
 }
 
 body.is-menu-open .menu,
