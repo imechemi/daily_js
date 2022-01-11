@@ -25,12 +25,28 @@ button {
   border-radius: 5px;
 }
 
-button svg {
+button:hover {
+  background-color: #740d8b;
+  transition: background-color 0.3s ease-in;
+}
+
+button.click-open svg {
   position: absolute;
-  top: 120%;
+  top: 80px;
   left: 30%;
-  color: #fff;
-  width: 50px;
+  color: purple;
+  width: 80px;
+  animation-name: point-to-button;
+  animation-duration: 0.3s;
+}
+
+@keyframes point-to-button {
+  0% {
+    top: 130px;
+  }
+  100% {
+    top: 80px;
+  }
 }
 
 .overlay {
@@ -62,6 +78,25 @@ button svg {
 
 .wave-hand {
   color: #fff;
+  animation-name: wave-hands;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in-out;
+  transform-origin: 50% 100%;
+}
+
+@keyframes wave-hands {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(30deg);
+  }
+  75% {
+    transform: rotate(-60deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 .modal__close-button {
