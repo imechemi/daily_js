@@ -32,20 +32,23 @@ button:hover {
 
 button.click-open svg {
   position: absolute;
-  top: 80px;
+  top: 90px;
   left: 30%;
-  color: purple;
+  color: rgb(155, 23, 155);
   width: 80px;
   animation-name: point-to-button;
-  animation-duration: 0.3s;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.07, 0.38, 0.63, 1.67);
 }
 
 @keyframes point-to-button {
   0% {
-    top: 130px;
+    transform: translateY(100px);
+    opacity: 0;
   }
   100% {
-    top: 80px;
+    transform: translateY(40px);
+    opacity: 1;
   }
 }
 
@@ -78,21 +81,34 @@ button.click-open svg {
 
 .wave-hand {
   color: #fff;
-  animation-name: wave-hands;
-  animation-duration: 0.5s;
-  animation-timing-function: ease-in-out;
-  transform-origin: 50% 100%;
+  animation: zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
+    wave-hands 1s 0.55s ease-in-out;
+}
+
+@keyframes zoom {
+  0% {
+    transform: scale(0.25);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 
 @keyframes wave-hands {
   0% {
-    transform: rotate(0deg);
+    transform: rotate(15deg);
   }
-  25% {
+  20% {
+    transform: rotate(-30deg);
+  }
+  40% {
     transform: rotate(30deg);
   }
-  75% {
-    transform: rotate(-60deg);
+  60% {
+    transform: rotate(-30deg);
+  }
+  80% {
+    transform: rotate(30deg);
   }
   100% {
     transform: rotate(0deg);
