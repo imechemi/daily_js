@@ -9,6 +9,9 @@ body {
   background-color: #251e63;
   width: 300px;
   height: 100vh;
+  transition-duration: 200ms;
+  transition-property: transform;
+  transition-timing-function: ease-out;
 }
 
 .menu ul {
@@ -33,6 +36,9 @@ body {
   height: 100vh;
   background-color: #76d694;
   padding: 5rem;
+  transition-duration: 200ms;
+  transition-property: transform;
+  transition-timing-function: ease-out;
 }
 
 .main h1 {
@@ -49,4 +55,7 @@ button {
 body.is-menu-open .menu,
 body.is-menu-open .main {
   transform: translateX(300px);
+  transition-duration: 200ms;
+  transition-property: transform;
+  transition-timing-function: ease-out;
 }
