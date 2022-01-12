@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <div class="container">
+    <button class="jsModalOpen click-open">
+      Click me!
+      <svg class="point-hand" viewBox="0 0 58 66">
+        <use xlink:href="images/sprite.svg#point-hand" />
+      </svg>
+    </button>
+  </div>
+
+  <div class="overlay hidden">
+    <div class="modal">
+      <button class="modal__close-button jsModalClose">
+        <svg width="1em" height="1em" viewBox="0 0 18 18">
+          <use xlink:href="images/sprite.svg#close" />
+        </svg>
+      </button>
+
+      <svg class="wave-hand" width="112" height="139" viewBox="0 0 112 139">
+        <use xlink:href="images/sprite.svg#wave-hand" />
+      </svg>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
