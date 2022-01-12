@@ -81,6 +81,7 @@ button.click-open svg {
 
 .wave-hand {
   color: #fff;
+  transform-origin: bottom center;
   animation: zoom 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28),
     wave-hands 1s 0.55s ease-in-out;
 }
