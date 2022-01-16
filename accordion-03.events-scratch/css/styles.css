@@ -50,12 +50,27 @@ body {
 }
 
 .accordion__content {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
+  transition: height 0.2s ease-in;
 }
 
 .accordion__content.is-hidden {
-  display: none;
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  transition: height 0.2s ease-in;
+}
+
+.accordion__inner {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  padding: 0.5em 1em;
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+
+.accordion__content.is-hidden .accordion__inner {
+  opacity: 0;
+  transition: opacity 100ms ease-in;
 }
 
 .image {
