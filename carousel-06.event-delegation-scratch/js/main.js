@@ -29,7 +29,6 @@ function findActiveSlideIndex() {
 
   for (let i = 0; i < dotBtns.length; i++) {
     if (dotBtns[i].classList.contains('active')) { 
-      console.log(`Returning index: ${i}`)
       return i
     }
   }
@@ -55,7 +54,6 @@ arrowButtons.forEach(arrow => {
       }
 
       showRightArrow()
-      console.log(`translateX(${nextSlidePosition * slideWidth}px)`)
       track.style.transform = `translateX(-${nextSlidePosition * slideWidth}px)`
       updateDotAtIndex(nextSlidePosition)
     }
