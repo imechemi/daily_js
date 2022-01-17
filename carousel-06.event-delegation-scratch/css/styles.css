@@ -48,20 +48,13 @@ ul {
   padding: 0;
   list-style: none;
   left: 0;
+  transition: transform 0.2s ease-in-out;
 }
 
 li {
   position: absolute;
   display: inline-block;
   width: 100%;
-}
-
-li:nth-child(2) {
-  left: 440px;
-}
-
-li:last-child {
-  left: 880px;
 }
 
 li img {
@@ -86,3 +79,9 @@ li img {
   background: #000;
 }
 
+
+.box {
+  width: 200px;
+  height: 200px;
+  background: purple;
+}

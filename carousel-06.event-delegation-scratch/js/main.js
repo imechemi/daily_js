@@ -6,6 +6,10 @@ const slideWidth = trackContainer.querySelector('.slide').getBoundingClientRect(
 const carouselDotsWrapper = carousel.querySelector('.carousel__dots')
 const dots = carousel.querySelectorAll('.dot')
 
+const slides = Array.from(track.children)
+slides.forEach((slide, index) => {
+  slide.style.transform = `translateX(${index * slideWidth}px)`
+})
 
 carouselDotsWrapper.addEventListener('click', function(e) {
   if (e.target.classList.contains('dot',)) {
@@ -20,36 +24,46 @@ carouselDotsWrapper.addEventListener('click', function(e) {
   }
 })
 
-function activateSlide(index) {
-  console.log(index)
-  track.style.left = `-${(slideWidth * index)}px`
+function findActiveSlideIndex() {
+  const dotBtns = carouselDotsWrapper.querySelectorAll('button')
+
+  for (let i = 0; i < dotBtns.length; i++) {
+    if (dotBtns[i].classList.contains('active')) { 
+      console.log(`Returning index: ${i}`)
+      return i
+    }
+  }
+  return 0
 }
 
 arrowButtons.forEach(arrow => {
   arrow.addEventListener('click', function(e) {
-    trackPosition = parseInt(track.style.left || 0)
     if (e.target.dataset.direction === 'right') {
-      const lastSlidePosition = -(slideWidth * (track.children.length - 2))
-      if (trackPosition === lastSlidePosition) {
+      let currentSlidePosition = findActiveSlideIndex()
+      let nextSlidePosition = currentSlidePosition + 1
+      showLeftArrow()
+      if (currentSlidePosition === slides.length - 2) {
         hideRightArrow()
       } 
-      showLeftArrow()
-      track.style.left = `${(trackPosition - slideWidth)}px`
+      track.style.transform = `translateX(-${nextSlidePosition * slideWidth}px)`
+      updateDotAtIndex(nextSlidePosition)
     } else {
-      const firstSlidePosition = 0
-      if (trackPosition === firstSlidePosition - slideWidth) {
+      let currentSlidePosition = findActiveSlideIndex()
+      nextSlidePosition = currentSlidePosition - 1
+      if (currentSlidePosition === 1) {
         hideLeftArrow(e.target)
       }
-      showRightArrow()
-      track.style.left = `${(trackPosition + slideWidth)}px`
-    }
 
-    const index = Math.abs(parseInt(track.style.left)) / slideWidth
-    updateDotAtIndex(index)
+      showRightArrow()
+      console.log(`translateX(${nextSlidePosition * slideWidth}px)`)
+      track.style.transform = `translateX(-${nextSlidePosition * slideWidth}px)`
+      updateDotAtIndex(nextSlidePosition)
+    }
   })
 })
 
 function updateDotAtIndex(selectedDotIndex) {
+  console.log(`Updating dot index: ${selectedDotIndex}`)
   dots.forEach((dot, index) => {
     if (selectedDotIndex === index) {
       dot.classList.add('active')
