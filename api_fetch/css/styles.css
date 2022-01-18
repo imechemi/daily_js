@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Dosis:wght@300;600&display=swap');
+body {
+  font-family: 'Dongle', sans-serif;
+  font-size: 20px;
+}
+
+ul.coffees {
+  margin: 0; 
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 10px;
+  column-gap: 10px;
+  justify-content: center;
+}
+
+ul.coffees > li {
+  width: 300px;
+  border: solid 1px;
+  padding: 10px;
+  background: rgba(37, 4, 4, 0.692);
+  color: #fff;
+  border-radius: 5px;
+}
+
+p {
+  line-height: 1;
+}
