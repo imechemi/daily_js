@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&family=Dosis:wght@300;600&display=swap');
+
+@font-face {
+  font-family: 'monlamOuchan2';
+  src: url('Monlam\ Uni\ OuChan2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Monlam Dutsa 1';
+  src: url('Monlam\ Dutsa\ 1\ Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Monlam Ouchan 2';
+  src: url('https://tibetan-fonts.s3.ap-south-1.amazonaws.com/Monlam+Uni+OuChan2.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Himalaya';
+  src: url('himalaya.ttf');
+}
+
+@font-face {
+  font-family: 'Jomolhari';
+  src: url('Jomolhari-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'DDC Uchen';
+  src: url('DDC_Uchen.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Betsu';
+  src: url('qomolangma-betsu.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Chuyig';
+  src: url('qomolangma-chuyig.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Drutsa';
+  src: url('qomolangma-drutsa.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Tsumachu';
+  src: url('Qomolangma-Tsumachu.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Tsuring';
+  src: url('qomolangma-tsuring.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Tsutong';
+  src: url('qomolangma-tsutong.ttf');
+}
+
+@font-face {
+  font-family: 'Qomolangma Uchensarchen';
+  src: url('qomolangma-uchensarchen.ttf');
+}
+
+body {
+  font-size: 24px;
+  font-family: 'Dongle', sans-serif;
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+header {
+  width: 100%;
+  background-color: #00a8ff;
+  padding: 0;
+  padding-top: 1px;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+header h1 {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  margin-top: 60px;
+  display: flex;
+  background-color: #fff;
+  box-shadow: 0px 10px 10px -6px #888;
+}
+
+nav > div.form {
+  width: 50%;
+  padding: 0.5em;
+  border: solid 1px #000;
+}
+
+nav div.form h2 {
+  margin: 0;
+  display: inline-block;
+}
+
+.input {
+  line-height: 1;
+  font-size: 1.5rem;
+}
+
+input[name='sample-text-input'] {
+  padding: 0.5em;
+  font-size: 1.5rem;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+  font-family: 'Monlam Ouchan 2';
+}
+
+.samples {
+  margin-top: 200px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 1em;
+  row-gap: 1em;
+  padding: 1em;
+}
+
+.sample {
+  padding: 1em;
+  border: solid 1px #ccc;
+  border-radius: 5px;
+}
+
+p {
+  margin: 0;
+  padding: 1em;
+  overflow-y: scroll;
+  height: 300px;
+}

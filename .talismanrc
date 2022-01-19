@@ -1,0 +1,5 @@
+fileignoreconfig:
+- filename: tibetan-font-test/css/Amne-Regular.ttf
+  checksum: e13744cbb1a48ac813b9c08bbbc66785b4ef332b4423145204ccf08bf77a30c9
+- filename: tibetan-font-test/css/Monlam
+  checksum: c00c0f8b082bd0e466793ebb35da81526ce085d6fbdf890d3fa6ed986cd81eda
