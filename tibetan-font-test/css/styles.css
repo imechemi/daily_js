@@ -90,12 +90,30 @@ header {
   top: 0;
   left: 0;
   height: 60px;
+  z-index: 1000;
 }
 
 header h1 {
   margin: 0;
-  text-align: center;
+  text-align: left;
   color: #fff;
+  padding-left: 0.5em;
+}
+
+header button {
+  position: absolute;
+  top: 0; 
+  right: 0;
+  background: transparent;
+  border: none;
+  height: 100%;
+  padding: 0 1em;
+
+}
+
+header button svg {
+  fill: #fff;
+  width: 30px;
 }
 
 nav {
@@ -106,6 +124,14 @@ nav {
   box-shadow: 0px 10px 10px -6px #888;
   align-items: center;
   padding: 0;
+  z-index: 100;
+  transform: translateY(-200px);
+  transition: transform 0.2s ease-out;
+}
+
+body.is-setting-open nav {
+  transform: translateY(0px);
+  transition: transform 0.2s ease-in;
 }
 
 nav div.form-input {
@@ -145,12 +171,17 @@ input[name='sample-text-input'] {
   line-height: 0;
 }
 
+body.is-setting-open .container {
+  transform: translateY(200px);
+  transition: transform 0.2s ease-in;
+}
+
 .container {
-  margin-top: 200px;
   display: grid;
   column-gap: 1em;
   row-gap: 1em;
   padding: 10px;
+  margin-top: 100px;
 }
 
 .sample {
@@ -172,4 +203,13 @@ p {
   padding: 1em;
   overflow-y: scroll;
   height: 300px;
+}
+
+@media (min-width: 376px) {
+  
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 1em;
+  }
 }

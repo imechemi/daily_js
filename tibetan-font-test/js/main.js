@@ -84,3 +84,8 @@ function createSample(font) {
 }
 
 
+const settingButton = document.querySelector('#settings')
+
+settingButton.addEventListener('click', function() {
+  document.body.classList.toggle('is-setting-open')
+})
