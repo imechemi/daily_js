@@ -1,7 +1,7 @@
 
 
 
-const sampleContainer = document.querySelector('.samples')
+const sampleContainer = document.querySelector('.container')
 const sampleTextInput = document.querySelector("[name='sample-text-input']")
 const fontSizeInput = document.querySelector('[name="font-size"]')
 const lineSpacingInput = document.querySelector('[name="line-spacing"]')

@@ -82,13 +82,14 @@ body {
 }
 
 header {
+  position: fixed;
   width: 100%;
   background-color: #00a8ff;
   padding: 0;
   padding-top: 1px;
-  position: fixed;
   top: 0;
   left: 0;
+  height: 60px;
 }
 
 header h1 {
@@ -99,55 +100,75 @@ header h1 {
 
 nav {
   position: fixed;
-  top: 0;
+  top: 60px;
   width: 100%;
-  margin-top: 60px;
-  display: flex;
   background-color: #fff;
   box-shadow: 0px 10px 10px -6px #888;
+  align-items: center;
+  padding: 0;
 }
 
-nav > div.form {
-  width: 50%;
-  padding: 0.5em;
-  border: solid 1px #000;
-}
-
-nav div.form h2 {
+nav div.form-input {
+  display: block;
+  padding: 0;
   margin: 0;
-  display: inline-block;
+  padding: 0.5em;
 }
 
-.input {
-  line-height: 1;
-  font-size: 1.5rem;
+div.form-control {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+}
+
+nav div.form-control h2 {
+  display: inline-block;
+  margin: 0;
+  padding-left: 10px;
+  padding: 0px 10px;
+  font-size: 1.3rem;
+  line-height: 0.9;
+}
+
+nav div.form-input input,
+nav div.form-input select {
+  padding: 0.5em;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: solid 1px #ccc;
 }
 
 input[name='sample-text-input'] {
-  padding: 0.5em;
-  font-size: 1.5rem;
-  border: solid 1px #ccc;
-  border-radius: 5px;
+  padding: 0em 1em;
+  padding-top: 0;
+  padding-bottom: 0;
   font-family: 'Monlam Ouchan 2';
+  line-height: 0;
 }
 
-.samples {
+.container {
   margin-top: 200px;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   column-gap: 1em;
   row-gap: 1em;
-  padding: 1em;
+  padding: 10px;
 }
 
 .sample {
-  padding: 1em;
+  padding: 0;
+  padding-right: 1em;
   border: solid 1px #ccc;
   border-radius: 5px;
 }
 
-p {
+.sample h2 {
   margin: 0;
+  margin-top: 0.5em;
+  padding: 0em;
+  padding-left: 0.5em;
+}
+
+p {
+  margin-top: 0;
   padding: 1em;
   overflow-y: scroll;
   height: 300px;
