@@ -1,19 +1,21 @@
 const tabMenu = document.querySelector('.tab__menu')
-const tabContents = document.querySelector('.tab__contents')
+const tabs = [...tabMenu.querySelectorAll('.tab')]
+const tabContentsContainer = document.querySelector('.tab__contents')
+const tabContents = [...tabContentsContainer.querySelectorAll('.tab__content')]
 
 tabMenu.addEventListener('click', function(e) {
   if (e.target.closest('.tab__menu')) {
-    const selectedTabId = e.target.getAttribute('id')
-    Array.from(tabMenu.children).forEach(tabButton => {
+    tabs.forEach(tabButton => {
       tabButton.classList.remove('active')
     })
 
-    Array.from(tabContents.children).forEach(tabContent => {
+    tabContents.forEach(tabContent => {
       tabContent.classList.remove('active')
     })
 
     e.target.classList.add('active')
-    const selectedTabContent = tabContents.querySelector(`#${selectedTabId}`)
+    const selectedTabId = e.target.getAttribute('id')
+    const selectedTabContent = tabContentsContainer.querySelector(`#${selectedTabId}`)
     selectedTabContent.classList.add('active')
   }
 })
