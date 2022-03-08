@@ -12,7 +12,7 @@ slides.forEach((slide, index) => {
 })
 
 carouselDotsWrapper.addEventListener('click', function(e) {
-  if (e.target.classList.contains('dot',)) {
+  if (e.target.classList.contains('dot')) {
     dots.forEach((dot, index) => {
       dot.classList.remove('active')
       if (dot.isSameNode(e.target)) {
@@ -23,6 +23,19 @@ carouselDotsWrapper.addEventListener('click', function(e) {
     })
   }
 })
+
+function activateSlide(selectedSlideIndex) {
+  showLeftArrow()
+  showRightArrow()
+
+  if (selectedSlideIndex === 0) {
+    hideLeftArrow()
+  }
+  if (selectedSlideIndex === slides.length - 1) {
+    hideRightArrow()
+  }
+  track.style.transform = `translateX(-${selectedSlideIndex * slideWidth}px)`
+}
 
 function findActiveSlideIndex() {
   const dotBtns = carouselDotsWrapper.querySelectorAll('button')
@@ -61,7 +74,6 @@ arrowButtons.forEach(arrow => {
 })
 
 function updateDotAtIndex(selectedDotIndex) {
-  console.log(`Updating dot index: ${selectedDotIndex}`)
   dots.forEach((dot, index) => {
     if (selectedDotIndex === index) {
       dot.classList.add('active')
